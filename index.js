@@ -12,6 +12,9 @@ app.use(cors())
 app.use(express.json())
 app.use("/api/auth", UserRouter)
 app.use("/api", ContactRouter)
+app.get("/", (req, res)=>{
+    return res.send("success connect")
+})
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -27,7 +30,7 @@ mongoose.connect(process.env.MONGO_URL, {
 })
 const io = require('socket.io')(http, {
     cors: {
-        origin: ["http://localhost:3000", "https://front-end-tefa-app-git-main-vernsz-code.vercel.app"],
+        origin: ["http://localhost:3000",  "*", "https://front-end-tefa.vercel.app"],
     }
 });
 
