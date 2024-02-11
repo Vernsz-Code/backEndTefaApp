@@ -30,7 +30,7 @@ mongoose.connect(process.env.MONGO_URL, {
 })
 const io = require('socket.io')(http, {
     cors: {
-        origin:["http://localhost:3000", "https://front-end-tefa.vercel.app"],
+        origin:["*"],
         credentials: true,
     }
 });
