@@ -27,12 +27,7 @@ mongoose.connect(process.env.MONGO_URL, {
 })
 const io = require('socket.io')(http, {
     cors: {
-<<<<<<< HEAD
         origin: ["http://localhost:3000", "https://front-end-tefa-app-git-main-vernsz-code.vercel.app"],
-=======
-        origin: ["https://chatapp.k4project.online"],
->>>>>>> c3a96c585c3473e6f21da0808a9e386af9aa76b1
-        credentials: true
     }
 });
 
